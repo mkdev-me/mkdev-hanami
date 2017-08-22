@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Web</title>
+    <%= favicon %>
+    <%= stylesheet 'bootstrap' %>
+  </head>
+  <body>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li>
+              <%= link_to 'Tickets', routes.folders_path %>
+            </li>
+            <li>
+              <%= link_to 'Customers', routes.customers_path %>
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+    <div class="container-fluid">
+      <div class="row">
+        <%= yield %>
+      </div>
+    </div>
+  </body>
+  <%= javascript 'bootstrap' %>
+</html>

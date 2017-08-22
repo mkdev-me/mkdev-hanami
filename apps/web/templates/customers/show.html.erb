@@ -1,0 +1,22 @@
+<div class="col-md-6 col-md-offset-3">
+  <h2>
+   <%= customer.name %>
+  </h2>
+  <% tickets.each do |ticket| %>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          <%= link_to ticket.title, routes.ticket_path(ticket.id) %>
+        </h3>
+      </div>
+      <div class="panel-body">
+        <% ticket.tags.each do |tag| %>
+          <span class="label label-info"><%= tag %></span>
+        <% end %>
+      </div>
+      <div class="panel-footer">
+        <%= ticket.customer_id %>
+      </div>
+    </div>
+  <% end %>
+</div>

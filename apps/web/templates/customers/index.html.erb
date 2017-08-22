@@ -1,0 +1,13 @@
+<div class="col-md-12">
+  <table class="table">
+      <% customers.each do |c| %>
+         <tr>
+           <td>
+             <%= link_to c.id, routes.customer_path(c.id) %>
+           </td>
+           <td><%= c.email %></td>
+           <td><%= c.name %></td>
+         </tr>
+      <% end %>
+  </table>
+</div>

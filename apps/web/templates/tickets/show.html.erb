@@ -1,0 +1,17 @@
+<div class="col-md-6 col-md-offset-3">
+  <h2>
+   #<%= ticket.id %>
+  </h2>
+  <% messages.each do |message| %>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          <%= message.author %> / <%= message.created_at %>
+        </h3>
+      </div>
+      <div class="panel-body">
+        <%= message.body %>
+      </div>
+    </div>
+  <% end %>
+</div>
