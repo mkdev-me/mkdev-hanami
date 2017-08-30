@@ -4,6 +4,8 @@ gem 'rake'
 gem 'hanami',       '~> 1.0'
 gem 'hanami-model', '~> 1.0'
 gem 'hanami-bootstrap'
+gem 'omniauth-google-oauth2'
+gem 'warden'
 gem 'groovehq'
 
 gem 'pg'

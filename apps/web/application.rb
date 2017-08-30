@@ -81,7 +81,18 @@ module Web
       #
       # See: http://www.rubydoc.info/gems/rack/Rack/Session/Cookie
       #
-      # sessions :cookie, secret: ENV['WEB_SESSIONS_SECRET']
+      sessions :cookie, secret: ENV['WEB_SESSIONS_SECRET']
+
+      middleware.use Warden::Manager
+
+      middleware.use OmniAuth::Builder do
+        provider :google_oauth2, ENV['GOOGLE_CLIENT_ID'], ENV['GOOGLE_CLIENT_SECRET']
+      end
+
+      controller.prepare do
+        include Web::Authentication
+        before :authenticate!
+      end
 
       # Configure Rack middleware for this application
       #
