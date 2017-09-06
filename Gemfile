@@ -7,6 +7,8 @@ gem 'hanami-bootstrap'
 gem 'omniauth-google-oauth2'
 gem 'warden'
 gem 'groovehq'
+gem 'intercom'
+gem 'sucker_punch', '~> 2.0'
 
 gem 'pg'
 
