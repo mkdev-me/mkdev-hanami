@@ -20,6 +20,13 @@
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
+    <div class="container">
+      <% if flash[:info] %>
+        <div class="alert alert-info">
+          <%= flash[:info]  %>
+        </div>
+        <% end %>
+    </div>
     <div class="container-fluid">
       <div class="row">
         <%= yield %>

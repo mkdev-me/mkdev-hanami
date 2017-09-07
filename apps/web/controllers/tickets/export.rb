@@ -3,6 +3,7 @@ module Web::Controllers::Tickets
     include Web::Action
 
     def call(params)
+      flash[:info] = "Exported started"
       ticket = TicketRepository.new.find(params[:id])
       ticket.migrate
       redirect_to '/'
