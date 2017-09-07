@@ -24,7 +24,7 @@ class ExportToIntercom
       conversation.conversation_message.id == conversation_message.id
     end.first
     @client.conversations.reply(id: conversation.id, type: 'admin', message_type: 'comment', body: @messages.last.body, admin_id: ENV["INTERCOM_ADMIN_ID"])
-    if ticket.state == 'closed'
+    if @ticket.state == 'closed'
       @client.conversations.reply(id: conversation.id, type: 'admin', message_type: 'close', admin_id: ENV["INTERCOM_ADMIN_ID"])
     end
   rescue
