@@ -2,6 +2,11 @@
   <h2>
    #<%= ticket.id %>
   </h2>
+  <%=
+    form_for :ticket, routes.export_ticket_path(id: ticket.id) do
+      submit 'Migrate ticket to Intercom'
+    end
+  %>
   <% messages.each do |message| %>
     <div class="panel panel-default">
       <div class="panel-heading">
